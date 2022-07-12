@@ -5,5 +5,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Work+Sans:wght@600;700&display=swap');
 
 * {
-    @apply m-0 p-0
+    @apply m-0 p-0 scroll-smooth selection:bg-red-500 selection:text-white
+}
+
+p,
+a {
+    @apply font-sans
+}
+
+.icon {
+    @apply w-5 h-5
 }
