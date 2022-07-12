@@ -15,8 +15,8 @@ export const HeaderDrawerLink: FunctionComponent<HeaderDrawerLinkProps> = ({
 	onClick,
 }: HeaderDrawerLinkProps) => {
 	const onLinkClick = () => {
-		router.push(URL);
 		onClick();
+		router.push(URL);
 	};
 
 	return (

@@ -17,7 +17,7 @@ export const Button: FunctionComponent<ButtonProps> = ({
 
 	if (type === "primary") {
 		buttonStyle = // eslint-disable-line
-			"px-7 py-2 text-white font-sans bg-red-500 rounded-lg hover:drop-shadow-md hover:relative hover:-translate-y-[0.1rem]";
+			"px-7 py-2 text-white font-sans bg-red-500 rounded-lg hover:drop-shadow-md hover:-translate-y-[0.1rem]";
 	} else if (type === "secondary") {
 		buttonStyle =
 			"px-7 py-2 text-red-500 font-sans bg-white border border-red-500 duration-200 rounded-lg hover:bg-red-500 hover:text-white";

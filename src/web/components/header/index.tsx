@@ -20,10 +20,10 @@ export const Header: FunctionComponent = () => {
 			</div>
 			<nav className="hidden md:flex md:gap-10">
 				<Button type="link" onClick={() => {}}>
-					<a href="#">Saiba mais</a>
+					<a href="#about-us">Saiba mais</a>
 				</Button>
 				<Button type="link" onClick={() => {}}>
-					<a href="#">Preços</a>
+					<a href="#prices">Preços</a>
 				</Button>
 			</nav>
 			<Button
