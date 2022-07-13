@@ -11,7 +11,7 @@ module.exports = {
 				},
 			},
 			fontFamily: {
-				sans: "Poppins, sans-serif",
+				sans: "Montserrat, sans-serif",
 				heading: "Work Sans, sans-serif",
 			},
 		},

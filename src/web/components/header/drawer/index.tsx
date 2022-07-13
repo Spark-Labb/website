@@ -1,4 +1,5 @@
 import {
+	Avatar,
 	Drawer,
 	DrawerBody,
 	DrawerContent,
@@ -12,19 +13,24 @@ import {
 	LoginIcon,
 	XIcon,
 } from "@heroicons/react/outline";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import type { FunctionComponent } from "react";
 
 import { HeaderDrawerLink } from "./link";
 
+import type { SummarizedDiscordUser } from "types/discord-user";
+
 interface HeaderDrawerProps {
 	isOpen: boolean;
 	onClose: () => void;
+	userData: SummarizedDiscordUser;
 }
 
 export const HeaderDrawer: FunctionComponent<HeaderDrawerProps> = ({
 	isOpen,
 	onClose,
+	userData,
 }: HeaderDrawerProps) => {
 	const navBarLinks = [
 		{
@@ -49,6 +55,8 @@ export const HeaderDrawer: FunctionComponent<HeaderDrawerProps> = ({
 		},
 	];
 	const router = useRouter();
+	const { name: discordUserName, avatarURL } = userData;
+	const isLoggedIn = Boolean(Object.keys(userData).length);
 
 	return (
 		<Drawer isOpen={isOpen} placement="bottom" onClose={onClose}>
@@ -73,6 +81,17 @@ export const HeaderDrawer: FunctionComponent<HeaderDrawerProps> = ({
 							{name}
 						</HeaderDrawerLink>
 					))}
+					{isLoggedIn ? ( // eslint-disable-line
+						<div className="border-t border-gray-300 pt-2 flex gap-2 font-sans items-center">
+							<Avatar name={discordUserName} src={avatarURL} size="sm" />
+							<div>
+								<h3>{discordUserName}</h3>
+								<Link href="/dashboard" passHref>
+									<a className="text-red-500">Ir para a dashboard</a>
+								</Link>
+							</div>
+						</div>
+					) : null}
 				</DrawerBody>
 			</DrawerContent>
 		</Drawer>

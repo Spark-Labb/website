@@ -1,11 +1,18 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import { Button } from "web/components/button";
 import { Header } from "web/components/header";
 
 import { AdvantagesContainer } from "./advantages-container";
 
 export const Home: NextPage = () => {
+	useEffect(() => {
+		if (!localStorage.getItem("user")) {
+			localStorage.setItem("user", "{}");
+		}
+	});
+
 	const router = useRouter();
 	const onAboutUsButtonClick = () => {
 		router.push("#advantages");
