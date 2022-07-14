@@ -14,9 +14,12 @@ export const HeaderDrawerLink: FunctionComponent<HeaderDrawerLinkProps> = ({
 	router,
 	onClick,
 }: HeaderDrawerLinkProps) => {
+	const ANIMATION_END_DURATION = 100;
 	const onLinkClick = () => {
 		onClick();
-		router.push(URL);
+		setTimeout(() => {
+			router.push(URL);
+		}, ANIMATION_END_DURATION);
 	};
 
 	return (
