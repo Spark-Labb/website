@@ -1,27 +1,32 @@
 import { Avatar, Tooltip, useDisclosure } from "@chakra-ui/react";
 import { LoginIcon, MenuIcon } from "@heroicons/react/solid";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import type { FunctionComponent } from "react";
 import { useEffect, useState } from "react";
 
 import { Button } from "../button";
 
 import { HeaderDrawer } from "./drawer";
+import { HeaderDrawerPrivacyWarningModal } from "./drawer/privacy-warning-modal";
 
 export const Header: FunctionComponent = () => {
-	const { isOpen, onOpen, onClose } = useDisclosure();
+	const {
+		isOpen: isDrawerOpen,
+		onOpen: onDrawerOpen,
+		onClose: onDrawerClose,
+	} = useDisclosure();
+	const {
+		isOpen: isModalOpen,
+		onOpen: onModalOpen,
+		onClose: onModalClose,
+	} = useDisclosure();
 	const [userData, setUserData] = useState(JSON.parse("{}"));
-	const router = useRouter();
 
 	useEffect(() => {
 		setUserData(JSON.parse(localStorage.getItem("user") as string));
 	}, [setUserData]);
 
 	const isLoggedIn = Boolean(Object.keys(userData).length);
-	const onLoginButtonClick = () => {
-		router.push(process.env.NEXT_PUBLIC_DISCORD_REDIRECT_URL as string);
-	};
 
 	return (
 		<header className="flex justify-between items-center h-[7rem] mx-10 md:mx-20">
@@ -59,17 +64,27 @@ export const Header: FunctionComponent = () => {
 				<Button
 					type="primary"
 					className="hidden font-medium md:flex md:items-center md:gap-1"
-					onClick={onLoginButtonClick}
+					onClick={onModalOpen}
 				>
 					<LoginIcon className="icon" />
 					Login
 				</Button>
 			)}
-			<button className="flex md:hidden" onClick={onOpen}>
+			<button className="flex md:hidden" onClick={onDrawerOpen}>
 				<MenuIcon className="w-5 h-5" />
 			</button>
 
-			<HeaderDrawer isOpen={isOpen} onClose={onClose} userData={userData} />
+			<HeaderDrawer
+				isOpen={isDrawerOpen}
+				onClose={onDrawerClose}
+				onModalOpen={onModalOpen}
+				userData={userData}
+			/>
+			<HeaderDrawerPrivacyWarningModal
+				isOpen={isModalOpen}
+				onClose={onModalClose}
+				onOpen={onModalOpen}
+			/>
 		</header>
 	);
 };

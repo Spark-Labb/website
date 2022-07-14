@@ -22,4 +22,5 @@ export interface SummarizedDiscordUser {
 	id: string;
 	name: string;
 	avatarURL: string;
+	email: string;
 }

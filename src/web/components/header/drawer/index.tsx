@@ -24,12 +24,14 @@ import type { SummarizedDiscordUser } from "types/discord-user";
 interface HeaderDrawerProps {
 	isOpen: boolean;
 	onClose: () => void;
+	onModalOpen: () => void;
 	userData: SummarizedDiscordUser;
 }
 
 export const HeaderDrawer: FunctionComponent<HeaderDrawerProps> = ({
 	isOpen,
 	onClose,
+	onModalOpen,
 	userData,
 }: HeaderDrawerProps) => {
 	const navBarLinks = [
@@ -48,15 +50,15 @@ export const HeaderDrawer: FunctionComponent<HeaderDrawerProps> = ({
 			url: "#prices",
 			icon: <CurrencyDollarIcon className="icon" />,
 		},
-		{
-			name: "Login",
-			url: "/sign-in",
-			icon: <LoginIcon className="icon" />,
-		},
 	];
 	const router = useRouter();
 	const { name: discordUserName, avatarURL } = userData;
 	const isLoggedIn = Boolean(Object.keys(userData).length);
+
+	const onLoginButtonClick = () => {
+		onClose();
+		onModalOpen();
+	};
 
 	return (
 		<Drawer isOpen={isOpen} placement="bottom" onClose={onClose}>
@@ -81,6 +83,10 @@ export const HeaderDrawer: FunctionComponent<HeaderDrawerProps> = ({
 							{name}
 						</HeaderDrawerLink>
 					))}
+					<button className="flex gap-2" onClick={onLoginButtonClick}>
+						<LoginIcon className="icon" />
+						Login
+					</button>
 					{isLoggedIn ? ( // eslint-disable-line
 						<div className="border-t border-gray-300 pt-2 flex gap-2 font-sans items-center">
 							<Avatar name={discordUserName} src={avatarURL} size="sm" />

@@ -13,6 +13,10 @@ a {
     @apply font-sans
 }
 
+.link {
+    @apply border-b border-b-red-300 transition-colors hover:bg-gray-300 hover:border-b-red-500
+}
+
 .icon {
     @apply w-5 h-5
 }

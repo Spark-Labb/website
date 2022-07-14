@@ -45,7 +45,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
 		},
 	);
 
-	const { id, username, avatar } = userData;
+	const { id, username, avatar, email } = userData;
 
 	return {
 		props: {
@@ -59,6 +59,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
 				id,
 				name: username,
 				avatarURL: `https://cdn.discordapp.com/avatars/${id}/${avatar}`,
+				email,
 			},
 		},
 	};
