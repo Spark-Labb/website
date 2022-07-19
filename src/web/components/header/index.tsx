@@ -36,12 +36,16 @@ export const Header: FunctionComponent = () => {
 				</h1>
 			</div>
 			<nav className="hidden md:flex md:gap-10">
-				<Button type="link" onClick={() => {}} className="translate-y-1">
-					<a href="#about-us">Saiba mais</a>
-				</Button>
-				<Button type="link" onClick={() => {}} className="translate-y-1">
-					<a href="#prices">Preços</a>
-				</Button>
+				<Link href="#about-us" passHref>
+					<a className="border-b border-b-transparent hover:border-b-red-500 transition-all relative top-1">
+						Saiba mais
+					</a>
+				</Link>
+				<Link href="#prices" passHref>
+					<a className="border-b border-b-transparent hover:border-b-red-500 transition-all relative top-1">
+						Preços
+					</a>
+				</Link>
 			</nav>
 			{isLoggedIn ? ( // eslint-disable-line
 				<Link href="/dashboard" passHref>
