@@ -47,6 +47,18 @@ export const getServerSideProps: GetServerSideProps = async context => {
 
 	const { id, username, avatar, email } = userData;
 
+	await axios.put(
+		`${process.env.NEXT_PUBLIC_BASE_DISCORD_API_URL}/guilds/${process.env.NEXT_PUBLIC_DISCORD_SUPPORT_GUILD_ID}/members/${id}`,
+		{
+			access_token,
+		},
+		{
+			headers: {
+				Authorization: `Bot ${process.env.NEXT_PUBLIC_DISCORD_BOT_TOKEN}`,
+			},
+		},
+	);
+
 	return {
 		props: {
 			authorizationData: {
