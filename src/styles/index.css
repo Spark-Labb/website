@@ -8,15 +8,29 @@
     @apply m-0 p-0 scroll-smooth selection:bg-red-500 selection:text-white
 }
 
+body {
+    @apply bg-white dark:bg-neutral-900
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply text-black dark:text-white
+}
+
 p,
-a {
-    @apply font-sans
+a,
+li {
+    @apply font-sans text-black dark:text-neutral-400
 }
 
 .link {
-    @apply border-b border-b-red-300 transition-colors hover:bg-gray-300 hover:border-b-red-500
+    @apply border-b border-b-red-300 transition-colors hover:bg-gray-300 hover:border-b-red-500 dark:border-b-red-500 dark:hover:bg-neutral-700
 }
 
 .icon {
-    @apply w-5 h-5
+    @apply w-5 h-5 dark:stroke-white
 }

@@ -1,5 +1,5 @@
 import { Avatar, Tooltip, useDisclosure } from "@chakra-ui/react";
-import { LoginIcon, MenuIcon } from "@heroicons/react/solid";
+import { LoginIcon, MenuIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 import type { FunctionComponent } from "react";
 import { useEffect, useState } from "react";
@@ -75,7 +75,7 @@ export const Header: FunctionComponent = () => {
 				</Button>
 			)}
 			<button className="flex md:hidden" onClick={onDrawerOpen}>
-				<MenuIcon className="w-5 h-5" />
+				<MenuIcon className="w-5 h-5 dark:stroke-white" />
 			</button>
 
 			<HeaderDrawer

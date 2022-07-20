@@ -1,18 +1,12 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 import { Button } from "web/components/button";
 import { Header } from "web/components/header";
+import { ThemeToggler } from "web/components/theme-toggler";
 
 import { AdvantagesContainer } from "./advantages-container";
 
 export const Home: NextPage = () => {
-	useEffect(() => {
-		if (!localStorage.getItem("user")) {
-			localStorage.setItem("user", "{}");
-		}
-	});
-
 	const router = useRouter();
 	const onAboutUsButtonClick = () => {
 		router.push("#advantages");
@@ -36,7 +30,11 @@ export const Home: NextPage = () => {
 							designs para redes sociais.
 						</p>
 					</div>
-					<Button type="primary" onClick={onAboutUsButtonClick}>
+					<Button
+						type="primary"
+						onClick={onAboutUsButtonClick}
+						className="px-5 py-3"
+					>
 						Saiba mais
 					</Button>
 				</section>
@@ -47,6 +45,7 @@ export const Home: NextPage = () => {
 					<h1 className="font-bold font-heading text-2xl">Vantagens</h1>
 					<AdvantagesContainer />
 				</section>
+				<ThemeToggler />
 			</main>
 		</>
 	);

@@ -8,17 +8,17 @@ export const AdvantagesContainer = () => {
 		{
 			title: "Eficiência",
 			description: defaultDescription,
-			icon: <CodeIcon className="w-12 h-12" />,
+			icon: <CodeIcon className="w-12 h-12 stroke-white" />,
 		},
 		{
 			title: "Velocidade",
 			description: defaultDescription,
-			icon: <ClockIcon className="w-12 h-12" />,
+			icon: <ClockIcon className="w-12 h-12 stroke-white" />,
 		},
 		{
 			title: "Preços justos",
 			description: defaultDescription,
-			icon: <CashIcon className="w-12 h-12" />,
+			icon: <CashIcon className="w-12 h-12 stroke-white" />,
 		},
 	];
 

@@ -29,8 +29,8 @@ export const HeaderDrawerPrivacyWarningModal: FunctionComponent<
 			blockScrollOnMount={false}
 		>
 			<ModalOverlay />
-			<ModalContent>
-				<ModalHeader className="flex items-center justify-between">
+			<ModalContent className="dark:bg-neutral-900">
+				<ModalHeader className="flex items-center justify-between text-black dark:text-white">
 					Antes de você continuar com o login...
 					<button onClick={onClose}>
 						<XIcon className="icon" />
