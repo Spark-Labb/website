@@ -30,11 +30,7 @@ export const Home: NextPage = () => {
 							designs para redes sociais.
 						</p>
 					</div>
-					<Button
-						type="primary"
-						onClick={onAboutUsButtonClick}
-						className="px-5 py-3"
-					>
+					<Button type="primary" onClick={onAboutUsButtonClick}>
 						Saiba mais
 					</Button>
 				</section>
