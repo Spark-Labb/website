@@ -2,23 +2,24 @@ import { CashIcon, ClockIcon, CodeIcon } from "@heroicons/react/outline";
 import { Card } from "web/components/card";
 
 export const AdvantagesContainer = () => {
-	const defaultDescription =
-		"Dolore id est eu labore commodo voluptate dolore dolore id irure officia. Non ut eu officia laboris est. Amet incididunt sint reprehenderit in occaecat adipisicing consectetur ea consequat. In proident esse fugiat minim proident occaecat cupidatat. Est ea aliqua eu deserunt quis ipsum sint deserunt occaecat magna voluptate elit deserunt.";
 	const advantagesData = [
 		{
 			title: "Eficiência",
-			description: defaultDescription,
-			icon: <CodeIcon className="w-12 h-12 stroke-white" />,
+			description:
+				"Você paga e o resto é com a gente. Conte com um suporte completo da nossa equipe até que seu bot esteja completamente feito.",
+			icon: <CodeIcon className="w-12 h-12 stroke-black dark:stroke-white" />,
 		},
 		{
 			title: "Velocidade",
-			description: defaultDescription,
-			icon: <ClockIcon className="w-12 h-12 stroke-white" />,
+			description:
+				"Sabemos como é ruim ficar esperando, então nossa equipe se dedica ao máximo para entregar a sua aplicação com a melhor qualidade, no menor tempo.",
+			icon: <ClockIcon className="w-12 h-12 stroke-black dark:stroke-white" />,
 		},
 		{
 			title: "Preços justos",
-			description: defaultDescription,
-			icon: <CashIcon className="w-12 h-12 stroke-white" />,
+			description:
+				"Sabemos que a situação não é das melhores para todo mundo. Portanto, faremos o possível para negociar um preço que caiba no seu bolso.",
+			icon: <CashIcon className="w-12 h-12 stroke-black dark:stroke-white" />,
 		},
 	];
 
