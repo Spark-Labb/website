@@ -72,7 +72,7 @@ export const HeaderDrawerPrivacyWarningModal: FunctionComponent<
 						<div className="flex gap-2">
 							<a
 								href={process.env.NEXT_PUBLIC_DISCORD_REDIRECT_URL}
-								className="transition-transform px-7 py-2 text-white bg-red-500 rounded-lg hover:drop-shadow-md hover:-translate-y-[0.1rem]"
+								className="flex items-center transition-transform px-7 py-2 text-white bg-red-500 rounded-lg hover:drop-shadow-md hover:-translate-y-[0.1rem]"
 							>
 								Concordar
 							</a>
