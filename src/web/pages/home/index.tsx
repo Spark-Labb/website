@@ -41,6 +41,12 @@ export const Home: NextPage = () => {
 					<h1 className="font-bold font-heading text-2xl">Vantagens</h1>
 					<AdvantagesContainer />
 				</section>
+				<section
+					id="prices"
+					className="flex flex-col justify-center items-center gap-6 mb-10 mx-10"
+				>
+					<h1 className="font-bold font-heading text-2xl">Preços</h1>
+				</section>
 				<ThemeToggler />
 			</main>
 		</>
