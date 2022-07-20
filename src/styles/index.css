@@ -34,3 +34,39 @@ li {
 .icon {
     @apply w-5 h-5 dark:stroke-white
 }
+
+.appearing {
+    animation: go-up .25s normal forwards ease-in;
+}
+
+.disappearing {
+    animation: go-down .25s normal forwards ease-out;
+}
+
+@keyframes go-up {
+    0% {
+        @apply -bottom-20 hidden
+    }
+
+    1% {
+        @apply -bottom-20 flex
+    }
+
+    100% {
+        @apply bottom-5
+    }
+}
+
+@keyframes go-down {
+    1% {
+        @apply bottom-1
+    }
+
+    99% {
+        @apply -bottom-20
+    }
+
+    100% {
+        @apply -bottom-20 hidden
+    }
+}
