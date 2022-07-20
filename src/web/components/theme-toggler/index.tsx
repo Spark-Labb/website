@@ -14,6 +14,10 @@ export const ThemeToggler: FunctionComponent = () => {
 		setIsScrollAboveHeader(window.scrollY > scrollYPageContent);
 	}, [setIsScrollAboveHeader]);
 
+	useOnScroll(_event => {
+		setIsScrollAboveHeader(window.scrollY > scrollYPageContent);
+	});
+
 	const onChangeThemeButtonClick = () => {
 		setTheme(theme === "light" ? "dark" : "light");
 	};
