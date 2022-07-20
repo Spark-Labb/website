@@ -25,8 +25,17 @@ export const AdvantagesContainer = () => {
 
 	return (
 		<div className="flex flex-wrap gap-x-20 gap-y-10 justify-center">
-			{advantagesData.map(advantage => (
-				<Card key={advantage.title} {...advantage} />
+			{advantagesData.map(({ title, description, icon }) => (
+				<Card key={title}>
+					<div className="flex flex-col gap-2 justify-center items-center">
+						{icon}
+						<h1 className="font-bold font-heading text-xl">{title}</h1>
+					</div>
+
+					<p className="flex justify-center text-base text-center items-center">
+						{description}
+					</p>
+				</Card>
 			))}
 		</div>
 	);
